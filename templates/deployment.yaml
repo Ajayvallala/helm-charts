@@ -7,11 +7,11 @@ spec:
  selector:
   matchLabels:
    app: web
-  template:
-   metadata:
-    labels: 
-     app: web
-   spec:
-    containers:
-    - name: nginx
-      image: "nginx:{{ .Values.deployment.imageversion }}"
+ template:
+  metadata:
+   labels: 
+    app: web
+  spec:
+   containers:
+   - name: nginx
+     image: nginx:{{ .Values.deployment.imageversion }}
