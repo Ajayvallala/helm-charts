@@ -15,10 +15,3 @@ spec:
     containers:
     - name: nginx
       image: "nginx:{{ .Values.deplyment.imageversion }}"
-      resources:
-       request:
-        cpu: "100mi"
-        memory: "128Gi"
-       limits:
-        cpu: "250mi"
-        memory: "256Gi"
