@@ -1,0 +1,24 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-dep
+spec:
+ replicas: {{ .Values.deployment.replicas }}
+ selector:
+  matchLabels:
+   app: web
+  template:
+   metadata:
+    labels: 
+     app: web
+   spec:
+    containers:
+    - name: nginx
+      image: "nginx:{{ .Values.deplyment.imageversion }}"
+      resources:
+       request:
+        cpu: "100mi"
+        memory: "128Gi"
+       limits:
+        cpu: "250mi"
+        memory: "256Gi"
